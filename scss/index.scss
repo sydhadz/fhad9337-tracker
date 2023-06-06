@@ -1,0 +1,17 @@
+html {
+    height: 100%;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+//testing scss - nested selectors
+main {
+    section {
+        h1 {
+            font-size: 100px;
+        }
+        p {
+            color: green;
+        }
+    }
+}
