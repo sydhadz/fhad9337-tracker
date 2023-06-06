@@ -1,19 +1,21 @@
 {
   "name": "fhad9337-tracker",
   "version": "1.0.0",
-  "description": "tracks the books a user has read",
+  "description": "Web Application that tracks the books a user has read- running on a node server",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "prestart": "parcel build ./public/index.html",
     "dev": "parcel serve ./public/index.html"
   },
-  "author": "",
+  "author": "Sydney Haddad",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "sass": "^1.62.1"
   },
   "devDependencies": {
+    "@parcel/transformer-sass": "^2.8.3",
     "parcel": "^2.8.3"
   }
 }
