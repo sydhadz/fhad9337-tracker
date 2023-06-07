@@ -7,3 +7,6 @@ https://www.teachucomp.com/special-characters-in-html-tutorial/ --> to type the 
 https://www.youtube.com/watch?v=xJKiuovQcPA&ab_channel=NorbertBMWebDevelopment - to get sass working on npm run dev and opening with live server 
 https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date#setting_maximum_and_minimum_dates --> dates
 https://www.masterclass.com/articles/what-are-the-different-genres-of-literature-a-guide-to-14-literary-genres book genres
+https://stackoverflow.com/questions/44679128/createelement-within-for-loop // create stars
+https://www.coding-dude.com/wp/css/css-star/ //creating star shapes
+https://www.w3schools.com/howto/howto_js_rangeslider.asp // create range number

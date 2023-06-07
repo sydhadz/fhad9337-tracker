@@ -1,0 +1,12 @@
+html {
+  height: 100%;
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+main section h1 {
+  font-size: 100px;
+}
+main section p {
+  color: green;
+}

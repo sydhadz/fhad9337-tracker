@@ -1,7 +1,7 @@
 // Setting up variables for our HTML elements using DOM selection
 const formPopUp = document.getElementById("formPopUp");
 const form = document.getElementById("bookForm");
-const tasklist = document.getElementById("tasklist");
+const booklist = document.getElementById("bookList"); //taskList
 
 function openForm() {
   formPopUp.style.display = "block";
@@ -12,35 +12,49 @@ function closeForm() {
 };
 
 // saving the data in the form when submitting
-formPopUp.addEventListener("submit", function(event) {
+form.addEventListener("submit", function(event) {
   event.preventDefault();
-
-  console.log(form.elements.bookTitle.value);
-
-  addTask(
+  addBook(
     form.elements.bookTitle.value,
-    form.elements.bookAuthor.value, //fix this to be different than a name value so it can show up on list
+    form.elements.bookAuthor.value, 
     form.elements.bookGenre.value,
     form.elements.startDate.value,
     form.elements.endDate.value,
     form.elements.bookRating.value,
     form.elements.bookReview.value,
-    form.elements.favourite.value,
+    //form.elements.favourite.value,
   );
-  console.log(taskList);
+  console.log(bookList);
+  closeForm();
+});
+
+// RANGE NUMBER- have a matching number displayed when the range changes to a specific value  
+const bookRating = document.getElementById('bookRating')
+bookRating.addEventListener('change', function(event) {
+  const bookRatingDisplay = document.getElementById('ratingValue')
+  bookRatingDisplay.innerHTML = bookRating.value
 });
 
 //outside of the function and inside, because of an error where it thinks the item isnt defined and then doesn't append
 let item = document.createElement("li");
 
-function displayTask(task) {
+function displayBook(book) { //displayTask, task
   let item = document.createElement("li");
 
-  item.setAttribute("data-id", task.id);
-  item.innerHTML = `<p><strong>${task.name}</strong><br>${task.type}</p>`;
-  tasklist.appendChild(item);
+  item.setAttribute("data-id", book.id);
+  item.innerHTML = `<p><strong>${book.title}</strong><br>${book.genre}</p>`;
+  booklist.appendChild(item);
   // Clear the value of the input once the task has been added to the page
   form.reset();
+
+  let starRating = document.createElement("p");
+
+  // STAR RATING - create a star matching the input in the form range value
+  for (let i = 1; i<=form.elements.bookRating.value; i++) {
+    let starRatingText = document.createTextNode("★");
+    starRating.appendChild(starRatingText);
+    item.appendChild(starRating); // Adds a delete button to every task
+  }
 
   // Setup delete button DOM elements
   let delButton = document.createElement("button");
@@ -51,48 +65,23 @@ function displayTask(task) {
   // Listen for when the delete button is clicked
   delButton.addEventListener("click", function(event) {
 
-    taskList.forEach(function(taskArrayElement, taskArrayIndex) {
-      if (taskArrayElement.id == item.getAttribute('data-id')) {
-        taskList.splice(taskArrayIndex, 1)
+    bookList.forEach(function(bookArrayElement, bookArrayIndex) { //taskArray...
+      if (bookArrayElement.id == item.getAttribute('data-id')) {
+        bookList.splice(bookArrayIndex, 1)
       }
     })
 
     // Make sure the deletion worked by logging out the whole array
-    console.log(taskList)
+    console.log(bookList)
 
     item.remove(); // Remove the task item from the page when button clicked
     // Because we used 'let' to define the item, this will always delete the right element
   })  
 };
 
-// SECTION 1 CODING CHALLENGE SCRIMBA CODE BELOW
-let checkboxElem = document.createElement("input");
-checkboxElem.setAttribute("type", "checkbox");
-
-item.insertBefore(checkboxElem, item.firstChild)
-
-checkboxElem.addEventListener("change", (event) => {
-  // Event listener callback function
-  let isChecked = event.target.checked;
-  
-  // change this for the favourite false/true 
-  taskList.forEach(function(taskArrayElement, taskArrayIndex){
-    if (taskArrayElement.id == item.getAttribute("data-id")){
-      if (isChecked) {
-        item.style.backgroundColor = 'rgb(220, 255, 220)';
-        taskArrayElement.billable = true;
-      } else {
-        item.style.backgroundColor = '#ffffff';
-        taskArrayElement.billable = false;
-      }
-    }
-  })
-  
-});
-
 
 // Create an array called 'taskList' - week 3 tutorial code
-var taskList = [];
+var bookList = [];
 
 // Create a function called 'addTask'
 // Give the function input parameters for: name, type, rate, time, client
@@ -100,26 +89,47 @@ var taskList = [];
 // Replace the property values with the input paramaters
 // Add the object to the taskList array
 
-function addTask(name, name, type, rate, time, client) {
+function addBook(title,author,genre,startDate,endDate,rating,review) {
 
   // Creating the object, directly passing in the input parameters
-  let task = {
-    title: "Pride and Prejudice",
-    author: "Jane Austen",
-    genre: "Romance",
-    startDate: "2018-07-21",
-    endDate: "2018-07-22",
-    rating: "1",
-    review: "Love this book",
-    favourite: true,
+  let book = {
+    title,
+    author,
+    genre,
+    startDate,
+    endDate,
+    rating,
+    review,
+    //favourite: true,
     id: Date.now(),
     date: new Date().toISOString()
   }
 
-  taskList.push(task);
-  displayTask(task);
+  bookList.push(book);
+  displayBook(book);
 
 }
 
 // Log the array to the console.
-console.log(taskList);
+console.log(bookList);
+
+
+
+  // Creating the object, directly passing in the input parameters
+ // let book = {
+ //   title: "Pride and Prejudice",
+ //   author: "Jane Austen",
+ //   genre: "Romance",
+ //   startDate: "2018-07-21",
+  //  endDate: "2018-07-22",
+ //   rating: "1",
+  //  review: "Love this book",
+    //favourite: true,
+  //  id: Date.now(),
+    //date: new Date().toISOString()
+  //}
+
+
+
+//---------------------------------------------------------------//
+// SECTION 1 CODING CHALLENGE SCRIMBA CODE BELOW

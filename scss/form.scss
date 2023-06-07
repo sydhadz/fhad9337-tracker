@@ -98,7 +98,6 @@
         position: relative;
         right: 240px; 
         margin-bottom:10px;
-
     }
 
     .btn:hover, .open-button:hover {
@@ -108,5 +107,10 @@
         opacity: 1;
         color: green;
     }
+}
+
+/* We use display: flex to create a row of stars, otherwise, the stars will appear vertically and inline (if that's what you want by all means go ahead) */
+.rating{
+    display: flex;
 }
 
