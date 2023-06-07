@@ -5,3 +5,5 @@ reference :
 https://www.w3schools.com/howto/howto_js_popup_form.asp --> how did i change this?
 https://www.teachucomp.com/special-characters-in-html-tutorial/ --> to type the "<" for the back/ exit form button
 https://www.youtube.com/watch?v=xJKiuovQcPA&ab_channel=NorbertBMWebDevelopment - to get sass working on npm run dev and opening with live server 
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date#setting_maximum_and_minimum_dates --> dates
+https://www.masterclass.com/articles/what-are-the-different-genres-of-literature-a-guide-to-14-literary-genres book genres

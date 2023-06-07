@@ -28,29 +28,46 @@
         <button class="cancel" onclick="closeForm()"> &#60; </button>
       </div>
       <div class="form-row">
-        <label for="taskName">Name</label>
-        <input type="text" name="taskName" id="taskName" required="true" />
+        <label for="bookTitle">Book Title</label> <!--for="taskName" -->
+        <input type="text" name="bookTitle" id="bookTitle" required="true" />
       </div>
       <div class="form-row">
-        <label for="taskType">Type</label>
-        <select id="taskType" name="taskType" required="true" >
+        <label for="bookAuthor">Author</label> 
+        <input type="text" name="bookAuthor" id="bookAuthor" required="true" /> 
+      </div>
+      <div class="form-row">
+        <label for="bookGenre">Genre</label> <!--  id="taskType" -->
+        <select id="bookGenre" name="bookGenre" required="true" >
             <option value="">Select one</option>
-            <option value="Concept Ideation">Concept Ideation</option>
-            <option value="Wireframing">Wireframing</option>
-            <option value="Application Coding">Application Coding</option>
+            <option value="Biography">Auto/Biography</option>
+            <option value="Distopian">Distopian</option>
+            <option value="Drama">Drama</option>
+            <option value="Fantasy">Fantasy</option>
+            <option value="Historical">Historical</option>
+            <option value="Horror">Horror</option>
+            <option value="Mystery">Mystery</option>
+            <option value="Romance">Romance</option>
+            <option value="Self-Help">Self-Help</option>
+            <option value="Thriller">Thriller</option>
+            <option value="Western">Western</option>
         </select>
       </div>
-      <div class="form-row">
-        <label for="taskRate">Rate</label>
-        <input type="number" name="taskRate" id="taskRate" required="true" />
+      <div>
+        <label for="startDate">Dates Read</label><br>
+        <input type="date" id="startDate" name="startDate" min="2001-01-01" max="2099-12-31"> to 
+        <input type="date" id="endDate" name="endDate" min="2001-01-01" max="2099-12-31">
       </div>
       <div class="form-row">
-        <label for="taskTime">Time</label>
-        <input type="number" name="taskTime" id="taskTime" required="true" />
+        <label for="bookRating">Rating</label> <!-- was taskRate-->
+        <input type="number" name="bookRating" id="bookRating" required="true" />
       </div>
       <div class="form-row">
-        <label for="taskClient">Client</label>
-        <input type="text" name="taskClient" id="taskClient" required="true" />
+        <label for="bookReview">Mini Review</label> 
+        <input type="text" name="bookReview" id="bookReview" required="true" />
+      </div>
+      <div class="form-row">
+        <label for="favourite">Favourite</label>
+        <input type="boolean" name="favourite" id="favourite" />
       </div>
       <div class="form-row">
         <input type="submit" class="btn">

@@ -28,7 +28,7 @@ main section p {
 .form-popup {
   display: none;
   position: absolute;
-  width: 350px;
+  width: 500px;
   top: 30%;
   border: 3px solid #f1f1f1;
   z-index: 9;
@@ -37,7 +37,7 @@ main section p {
 
 /* Add styles to the form container */
 .form-container {
-  max-width: 300px;
+  max-width: 500px;
   padding: 10px;
   background-color: white;
 }

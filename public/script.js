@@ -15,14 +15,17 @@ function closeForm() {
 formPopUp.addEventListener("submit", function(event) {
   event.preventDefault();
 
-  console.log(form.elements.taskType.value);
+  console.log(form.elements.bookTitle.value);
 
   addTask(
-    form.elements.taskName.value,
-    form.elements.taskType.value,
-    form.elements.taskRate.value,
-    form.elements.taskTime.value,
-    form.elements.taskClient.value,
+    form.elements.bookTitle.value,
+    form.elements.bookAuthor.value, //fix this to be different than a name value so it can show up on list
+    form.elements.bookGenre.value,
+    form.elements.startDate.value,
+    form.elements.endDate.value,
+    form.elements.bookRating.value,
+    form.elements.bookReview.value,
+    form.elements.favourite.value,
   );
   console.log(taskList);
 });
@@ -97,25 +100,26 @@ var taskList = [];
 // Replace the property values with the input paramaters
 // Add the object to the taskList array
 
-function addTask(name, type, rate, time, client) {
+function addTask(name, name, type, rate, time, client) {
 
   // Creating the object, directly passing in the input parameters
   let task = {
-    name,
-    type,
+    title: "Pride and Prejudice",
+    author: "Jane Austen",
+    genre: "Romance",
+    startDate: "2018-07-21",
+    endDate: "2018-07-22",
+    rating: "1",
+    review: "Love this book",
+    favourite: true,
     id: Date.now(),
-    date: new Date().toISOString(),
-    rate,
-    time,
-    client
+    date: new Date().toISOString()
   }
 
   taskList.push(task);
   displayTask(task);
 
 }
-
-// Call the function with test values for the input paramaters - addTask("Initial Sketches", "Concept Ideation", 50, 5, "Google");
 
 // Log the array to the console.
 console.log(taskList);
