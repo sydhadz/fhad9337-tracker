@@ -68,6 +68,21 @@ function displayBook(book) { //displayTask, task
     item.appendChild(favourited); 
   }
 
+  //Output the time taken to read- calculations(as converts to milliseconds)
+  // To calculate the time difference of two dates
+  let endDate = new Date(form.elements.endDate.value);
+  let startDate = new Date(form.elements.startDate.value);
+  let timeDifference = endDate.getTime() - startDate.getTime();
+      
+  // To calculate the no. of DAYS between two dates
+  let daysDifference = timeDifference / (1000 * 3600 * 24);
+    
+  //To display the final no. of days (result)
+  let readingTime = document.createElement("p");
+  readingTime.innerHTML = "Reading Time: " + daysDifference + " days";
+  item.appendChild(readingTime);
+    
+
   // Setup delete button DOM elements
   let delButton = document.createElement("button");
   let delButtonText = document.createTextNode("🗑️");
@@ -98,28 +113,24 @@ function displayBook(book) { //displayTask, task
   viewButton.addEventListener("click", function(event) {
     bookList.forEach(function(bookArrayElement, bookArrayIndex) { 
       if (bookArrayElement.id == item.getAttribute('data-id')) {
-        bookPopUpText.innerHTML = (`<p><strong>${book.title}</strong>
-        <br>${book.author}
-        <br>${book.genre}
-        <br>${book.startDate} ${book.endDate}
-        <br>${book.rating}
-        <br>${book.review}
-        <br>${book.favourite}
-        <br>${book.id}
-        <br>${book.date}
-        <br>${book.date}
+        bookPopUpText.innerHTML = (`<p>
+        <strong> Full Book List Item Details </strong>
+        <br>Title: ${book.title}
+        <br>Author: ${book.author}
+        <br>Genre: ${book.genre}
+        <br>Dates Read: ${book.startDate} to ${book.endDate}
+        <br>Rating: ${book.rating} stars
+        <br>Mini Review: ${book.review}
+        <br>Favorite Status: ${book.favourite}
+        <br>Item ID: ${book.id}
+        <br>Item Creation Date: ${book.date}
         </p>`);
         bookPopUp.appendChild(bookPopUpText);
         bookPopUp.style.display = "block";
       }
     })
-
-    // Make sure the deletion worked by logging out the whole array
-    console.log(bookList)
-
-    item.remove(); // Remove the task item from the page when button clicked
-    // Because we used 'let' to define the item, this will always delete the right element
   })
+
 
   form.reset();
 };
