@@ -2,6 +2,7 @@
 const formPopUp = document.getElementById("formPopUp");
 const form = document.getElementById("bookForm");
 const booklist = document.getElementById("bookList"); //taskList
+const bookPopUp = document.getElementById("bookPopUp");
 
 function openForm() {
   formPopUp.style.display = "block";
@@ -10,6 +11,11 @@ function openForm() {
 function closeForm() {
   formPopUp.style.display = "none";
 };
+
+function closePopUp() {
+  bookPopUp.style.display = "none";
+};
+
 
 // saving the data in the form when submitting
 form.addEventListener("submit", function(event) {
@@ -67,7 +73,6 @@ function displayBook(book) { //displayTask, task
   let delButtonText = document.createTextNode("🗑️");
   delButton.appendChild(delButtonText);
   item.appendChild(delButton); // Adds a delete button to every task
-  
   // Listen for when the delete button is clicked
   delButton.addEventListener("click", function(event) {
     bookList.forEach(function(bookArrayElement, bookArrayIndex) { //taskArray...
@@ -83,6 +88,39 @@ function displayBook(book) { //displayTask, task
     // Because we used 'let' to define the item, this will always delete the right element
   })
   
+   // Setup view button DOM elements
+  let bookPopUpText = document.createElement("p");
+  let viewButton = document.createElement("button");
+  let viewButtonText = document.createTextNode("🔍");
+  viewButton.appendChild(viewButtonText);
+  item.appendChild(viewButton); 
+  // view button functionality- click to show all the details about the item --> WORKS
+  viewButton.addEventListener("click", function(event) {
+    bookList.forEach(function(bookArrayElement, bookArrayIndex) { 
+      if (bookArrayElement.id == item.getAttribute('data-id')) {
+        bookPopUpText.innerHTML = (`<p><strong>${book.title}</strong>
+        <br>${book.author}
+        <br>${book.genre}
+        <br>${book.startDate} ${book.endDate}
+        <br>${book.rating}
+        <br>${book.review}
+        <br>${book.favourite}
+        <br>${book.id}
+        <br>${book.date}
+        <br>${book.date}
+        </p>`);
+        bookPopUp.appendChild(bookPopUpText);
+        bookPopUp.style.display = "block";
+      }
+    })
+
+    // Make sure the deletion worked by logging out the whole array
+    console.log(bookList)
+
+    item.remove(); // Remove the task item from the page when button clicked
+    // Because we used 'let' to define the item, this will always delete the right element
+  })
+
   form.reset();
 };
 
