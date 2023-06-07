@@ -10,3 +10,5 @@ https://www.masterclass.com/articles/what-are-the-different-genres-of-literature
 https://stackoverflow.com/questions/44679128/createelement-within-for-loop // create stars
 https://www.coding-dude.com/wp/css/css-star/ //creating star shapes
 https://www.w3schools.com/howto/howto_js_rangeslider.asp // create range number
+https://www.w3schools.com/charsets/ref_emoji.asp //emojis used for styling favoruites, delete etc 
+https://www.w3schools.com/howto/howto_js_display_checkbox_text.asp // checkbox checking if checked

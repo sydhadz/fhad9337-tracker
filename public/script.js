@@ -22,7 +22,7 @@ form.addEventListener("submit", function(event) {
     form.elements.endDate.value,
     form.elements.bookRating.value,
     form.elements.bookReview.value,
-    //form.elements.favourite.value,
+    form.elements.favourite.checked,
   );
   console.log(bookList);
   closeForm();
@@ -45,15 +45,21 @@ function displayBook(book) { //displayTask, task
   item.innerHTML = `<p><strong>${book.title}</strong><br>${book.genre}</p>`;
   booklist.appendChild(item);
   // Clear the value of the input once the task has been added to the page
-  form.reset();
-
-  let starRating = document.createElement("p");
 
   // STAR RATING - create a star matching the input in the form range value
+  let starRating = document.createElement("p");
   for (let i = 1; i<=form.elements.bookRating.value; i++) {
-    let starRatingText = document.createTextNode("★");
+    let starRatingText = document.createTextNode("⭐");
     starRating.appendChild(starRatingText);
-    item.appendChild(starRating); // Adds a delete button to every task
+  }
+  item.appendChild(starRating); 
+
+  // FAVOURITED - check if box ticked, then output that it is a favourite book
+  let favourited = document.createElement("p");
+  if (form.elements.favourite.checked == true) {
+    let favouritedText = document.createTextNode("🖤");
+    favourited.appendChild(favouritedText);
+    item.appendChild(favourited); 
   }
 
   // Setup delete button DOM elements
@@ -61,10 +67,9 @@ function displayBook(book) { //displayTask, task
   let delButtonText = document.createTextNode("🗑️");
   delButton.appendChild(delButtonText);
   item.appendChild(delButton); // Adds a delete button to every task
-
+  
   // Listen for when the delete button is clicked
   delButton.addEventListener("click", function(event) {
-
     bookList.forEach(function(bookArrayElement, bookArrayIndex) { //taskArray...
       if (bookArrayElement.id == item.getAttribute('data-id')) {
         bookList.splice(bookArrayIndex, 1)
@@ -76,7 +81,9 @@ function displayBook(book) { //displayTask, task
 
     item.remove(); // Remove the task item from the page when button clicked
     // Because we used 'let' to define the item, this will always delete the right element
-  })  
+  })
+  
+  form.reset();
 };
 
 
@@ -89,7 +96,7 @@ var bookList = [];
 // Replace the property values with the input paramaters
 // Add the object to the taskList array
 
-function addBook(title,author,genre,startDate,endDate,rating,review) {
+function addBook(title, author, genre, startDate, endDate, rating, review, favourite) {
 
   // Creating the object, directly passing in the input parameters
   let book = {
@@ -100,7 +107,7 @@ function addBook(title,author,genre,startDate,endDate,rating,review) {
     endDate,
     rating,
     review,
-    //favourite: true,
+    favourite,
     id: Date.now(),
     date: new Date().toISOString()
   }
@@ -129,7 +136,3 @@ console.log(bookList);
     //date: new Date().toISOString()
   //}
 
-
-
-//---------------------------------------------------------------//
-// SECTION 1 CODING CHALLENGE SCRIMBA CODE BELOW
