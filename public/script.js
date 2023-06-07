@@ -45,7 +45,7 @@ bookRating.addEventListener('change', function(event) {
 let item = document.createElement("li");
 
 function displayBook(book) { //displayTask, task
-  let item = document.createElement("li");
+  const item = document.createElement("li");
 
   item.setAttribute("data-id", book.id);
   item.innerHTML = `<p><strong>${book.title}</strong><br>${book.genre}</p>`;
@@ -137,7 +137,9 @@ function displayBook(book) { //displayTask, task
 
 
 // Create an array called 'taskList' - week 3 tutorial code
-var bookList = [];
+
+//let bookList = JSON.parse(localStorage.getItem('booklist')) || [];
+let bookListArray = [];
 
 // Create a function called 'addTask'
 // Give the function input parameters for: name, type, rate, time, client
@@ -161,13 +163,18 @@ function addBook(title, author, genre, startDate, endDate, rating, review, favou
     date: new Date().toISOString()
   }
 
-  bookList.push(book);
+  //const bookListArray = JSON.parse(localStorage.getItem('booklist')) || [];
+
+  bookListArray.push(book);
+  //localStorage.setItem('booklist', JSON.stringify(bookList));
+
   displayBook(book);
 
 }
 
 // Log the array to the console.
 console.log(bookList);
+
 
 
 

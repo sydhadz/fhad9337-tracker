@@ -12,3 +12,4 @@ https://www.coding-dude.com/wp/css/css-star/ //creating star shapes
 https://www.w3schools.com/howto/howto_js_rangeslider.asp // create range number
 https://www.w3schools.com/charsets/ref_emoji.asp //emojis used for styling favoruites, delete etc 
 https://www.w3schools.com/howto/howto_js_display_checkbox_text.asp // checkbox checking if checked
+https://www.geeksforgeeks.org/how-to-calculate-the-number-of-days-between-two-dates-in-javascript/ // to display the reading time between dates 
