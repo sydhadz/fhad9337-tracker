@@ -6,7 +6,7 @@
 
 I have developed the backend and frontend of this minimal web application by using HTML, CSS, and JS with added features from node.js, and Sass. GitHub was used from start to end for version control and code repository hosting, as can be viewed by my commits. This web application has a single page architecture, and includes a pop-up for the form. 
 
-**Iterations/ Improvements made since the Static Design **
+**Iterations/ Improvements made since the Static Design**
 
 I implemented the same data model as was discussed in the previous assignment. However, I have changed the UI to be more simplistic and continue to follow best practices- specifically with the form design (labels ontop of inputs, one column, feedback when active and hovering, etc.). There are interactions to add the tracked items (books) to the library, as well as capability to view and delete said items. There is some persistence between sessions, mainly in the console with shows submitted items from previous sessions. 
 
