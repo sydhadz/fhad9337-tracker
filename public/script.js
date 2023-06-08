@@ -139,7 +139,7 @@ function displayBook(book) { //displayTask, task
 // Create an array called 'taskList' - week 3 tutorial code
 
 //let bookList = JSON.parse(localStorage.getItem('booklist')) || [];
-let bookListArray = [];
+let bookList = [];
 
 // Create a function called 'addTask'
 // Give the function input parameters for: name, type, rate, time, client
@@ -165,7 +165,7 @@ function addBook(title, author, genre, startDate, endDate, rating, review, favou
 
   //const bookListArray = JSON.parse(localStorage.getItem('booklist')) || [];
 
-  bookListArray.push(book);
+  bookList.push(book);
   //localStorage.setItem('booklist', JSON.stringify(bookList));
 
   displayBook(book);

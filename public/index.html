@@ -9,19 +9,11 @@
 </head>
 
 <body>
-    <main>
-        <section>
-            <h1>hello world</h1>
-            <p>some more text</p>
-        </section>
-    </main>
-    <p>outside the main element</p>
   <header>
-    <h1>Task Tracker</h1>
+    <h1>WELCOME TO YOUR LIBRARY</h1>
+    <button class="open-button" onclick="openForm()">Add a Book!</button>
   </header>
   
-  <button class="open-button" onclick="openForm()">Start Adding Books!</button>
-
   <div class="form-popup" id="formPopUp"> 
     <form class="form-container" id="bookForm"> <!-- old id="taskform" -->
       <div class="form-row">
@@ -83,6 +75,10 @@
   <div class="book-popup" id="bookPopUp" style="display: none;"> 
     <button type="button" class="close" onclick="closePopUp()"> &#60; </button> 
   </div>
+
+  <footer>
+    <p><i>Made by: Sydney Haddad</i></p>
+  </footer>
 
   <script src="script.js"></script>
 </body>

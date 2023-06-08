@@ -1,30 +1,95 @@
 html {
   height: 100%;
   width: 100%;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Times New Roman", Times, serif;
 }
 
-main section h1 {
-  font-size: 100px;
-}
-main section p {
-  color: green;
+body {
+  margin: 0;
+  overflow-x: hidden;
 }
 
-/* Button used to open the contact form - fixed at the bottom of the page */
+/* used chatgpt to help create the header - specificlally having the image behind the text and with a darker overlay */
+header {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  justify-content: center;
+  background: url("library-header.jpg") center/cover no-repeat;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  text-align: left;
+  color: #fff;
+  padding-bottom: 5px;
+}
+header header:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+header h1 {
+  font-size: 55px;
+  margin-left: 470px;
+  margin-bottom: 100px;
+  top: 350px;
+  padding: 0;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+/* Button used to open the contact form - */
 .open-button {
-  background-color: #555;
-  color: white;
+  margin-left: 100px;
+  top: 300px;
+  color: maroon;
   padding: 16px 20px;
   border: none;
   cursor: pointer;
-  opacity: 0.8;
   position: relative;
-  width: 20%;
-  left: 40%;
+  z-index: 1;
+  font-size: 20px;
+  border-radius: 4px;
+  background-color: rgb(255, 246, 213);
 }
 
-/* The popup form - hidden by default --> works on iphone, but off centre on desktop */
+.open-button:hover {
+  box-shadow: 0 5px 5px rgba(255, 246, 213, 0.4);
+}
+
+footer {
+  padding: 10px;
+  background-color: rgb(22, 22, 22);
+  font-size: 20px;
+  color: #fff;
+  align-items: center;
+}
+
+/* responsiveness - iphone SE */
+@media screen and (max-width: 500px) {
+  html {
+    overflow-x: hidden;
+  }
+  header {
+    padding: 0;
+  }
+  header h1 {
+    font-size: 20px;
+    margin-left: 43px;
+    top: 250px;
+  }
+  .open-button {
+    font-size: 10px;
+    top: 200px;
+    margin-left: 0px;
+  }
+}
+/* The popup form - hidden by default */
 .form-popup {
   display: none;
   position: absolute;
@@ -33,9 +98,9 @@ main section p {
   border: 3px solid #f1f1f1;
   z-index: 9;
   background-color: white;
+  color: black;
 }
 
-/* Add styles to the form container */
 .form-container {
   max-width: 500px;
   padding: 10px;
@@ -58,21 +123,21 @@ main section p {
   flex-grow: 1;
 }
 
-/* Full-width input fields 
+/* Full-width input fields */
 .form-container input[type=text], .form-container input[type=password] {
-    width: 100%;
-    padding: 15px;
-    margin: 5px 0 22px 0;
-    border: none;
-    background: #f1f1f1;
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
 }
 
-/* When the inputs get focus, do something 
+/* When the inputs get focus, do something */
 .form-container input[type=text]:focus, .form-container input[type=password]:focus {
-    background-color: #ddd;
-    outline: none;
+  background-color: #ddd;
+  outline: none;
 }
-*/
+
 /* Set a style for the submit/login button */
 .form-container .btn {
   background-color: #04AA6D;
@@ -101,4 +166,16 @@ main section p {
 .form-container .cancel:hover {
   opacity: 1;
   color: green;
+}
+
+/* We use display: flex to create a row of stars, otherwise, the stars will appear vertically and inline (if that's what you want by all means go ahead) */
+.rating {
+  display: flex;
+}
+
+/* responsiveness - iphone SE */
+@media screen and (max-width: 500px) {
+  .form-popup, .form-container {
+    width: 353px;
+  }
 }
