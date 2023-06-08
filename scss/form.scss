@@ -1,88 +1,120 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
 /* The popup form - hidden by default */ 
 .form-popup {
     display: none;
     position: absolute;
+    top: 200px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
     width: 500px;
-    top:30%;
+    margin: auto;
     border: 3px solid #f1f1f1;
     z-index: 9;
-    background-color: white;
+    background-color: rgb(255, 246, 213);
     color: black;
-}
 
-.form-container {
-    max-width: 500px;
-    padding: 10px;
-    background-color: white;
-//    max-width: 500px;
-//    margin: 0 auto;
-//    border: 2px solid grey;
-//    padding: 2em 1em;
 }
-
-.form-row {
-    display: flex;
-    justify-content: flex-end;
-    padding: .5em;
-}
-
-.form-row > label {
-    width: 100px;
-}
-
-.form-row > input,
-.form-row > select {
-    padding: .5em;
-    flex-grow: 1;
-}
-
-/* Full-width input fields */
-.form-container input[type=text], .form-container input[type=password] {
-    width: 100%;
-    padding: 15px;
-    margin: 5px 0 22px 0;
-    border: none;
-    background: #f1f1f1;
-}
-
-/* When the inputs get focus, do something */
-.form-container input[type=text]:focus, .form-container input[type=password]:focus {
-    background-color: #ddd;
-    outline: none;
-}
-
 
 /* Set a style for the submit/login button */
 .form-container {
+    max-width: 500px;
+    padding: 10px;
+    background-color: rgb(255, 246, 213);
+    font-family: Arial, Helvetica, sans-serif;
+
+    h2 {
+        text-align: center;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    .form-row {
+        display: flex;
+        padding: 5px;
+    }
+    
+    .form-row > label {
+        width: 100px;
+    }
+    
+    input[type=checkbox]  {
+        padding: .5em;
+        flex-grow: 1;
+        margin-left: -371px;
+        border: 0.15em solid #000;
+        border-radius: 0.15em;
+    }
+
+    input[type=range]  {
+        width: 100%;
+    }
+
+    /* Full-width input fields */
+    input[type=text] , select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    input[type=date]  {
+        width: 47%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    /* When the inputs get focus, do something */
+    input[type=text]:focus, select:focus, input[type=date]:focus {
+        background-color: #ddd;
+        outline: none;
+        border: 2px solid maroon;
+        border-radius: 4px;
+    }
+
+
     .btn {
-        background-color: #04AA6D;
+        background-color: maroon;
         color: white;
         padding: 16px 20px;
         border: none;
         cursor: pointer;
         width: 100%;
-        margin-bottom:10px;
-        opacity: 0.8;
+        margin-top:10px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        border-radius: 4px;
     }
 
     .cancel {
-        background-color: white;
-        color: green;
+        background-color: rgb(22, 22, 22);
+        color: white;
         padding: 16px 20px;
         border: none;
         cursor: pointer;
-        opacity: 0.8;
-        position: relative;
-        right: 240px; 
-        margin-bottom:10px;
+        width: 100%;
+        margin-top:10px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        border-radius: 4px;
     }
 
-    .btn:hover, .open-button:hover {
-        opacity: 1;
+    .btn:hover {
+        box-shadow: 0 5px 5px rgb(128, 0, 0, .4);
     }
+
     .cancel:hover {
-        opacity: 1;
-        color: green;
+        box-shadow: 0 5px 5px rgb(22, 22, 22,.4);
     }
 }
 
@@ -94,7 +126,18 @@
 
 /* responsiveness - iphone SE */
 @media screen and (max-width: 500px) { 
-    .form-popup, .form-container {
+    .form-popup {
         width: 353px;
+        top: 0px;
     }
+    .form-container {
+        margin: 0px;
+        
+        input[type=checkbox]  {
+            padding: .5em;
+            flex-grow: 1;
+            margin-left: -270px;
+        }
+    }
+    
 }

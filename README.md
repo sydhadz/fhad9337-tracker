@@ -15,3 +15,4 @@ https://www.w3schools.com/howto/howto_js_display_checkbox_text.asp // checkbox c
 https://www.geeksforgeeks.org/how-to-calculate-the-number-of-days-between-two-dates-in-javascript/ // to display the reading time between dates 
 https://superdevresources.com/css-button-glow-effect/
 https://stackoverflow.com/questions/62589275/how-to-center-align-a-button-inside-a-div-with-absolute-position 
+https://medium.com/@prvnbist/css-grid-cards-layout-aspect-ratio-7544e905dff1 // creating the list cards

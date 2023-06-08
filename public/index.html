@@ -16,19 +16,17 @@
   
   <div class="form-popup" id="formPopUp"> 
     <form class="form-container" id="bookForm"> <!-- old id="taskform" -->
+      <h2>Fill in details about the book:</h2>
+      <label for="bookTitle">Book Title</label> <!--for="taskName" -->
       <div class="form-row">
-        <button type="button" class="cancel" onclick="closeForm()"> &#60; </button> <!-- need to make type=button so form doesn't submit as default -->
-      </div>
-      <div class="form-row">
-        <label for="bookTitle">Book Title</label> <!--for="taskName" -->
         <input type="text" name="bookTitle" id="bookTitle" required="true"/>
       </div>
+      <label for="bookAuthor">Author</label> 
       <div class="form-row">
-        <label for="bookAuthor">Author</label> 
         <input type="text" name="bookAuthor" id="bookAuthor" required="true"/> 
       </div>
+      <label for="bookGenre">Genre</label> <!--  id="taskType" -->
       <div class="form-row">
-        <label for="bookGenre">Genre</label> <!--  id="taskType" -->
         <select id="bookGenre" name="bookGenre" required="true">
             <option value="">Select a Book Genre</option>
             <option value="Biography">Auto/Biography</option>
@@ -44,18 +42,19 @@
             <option value="Western">Western</option>
         </select>
       </div>
-      <div>
-        <label for="startDate">Dates Read</label><br>
-        <input type="date" id="startDate" name="startDate" min="2001-01-01" max="2099-12-31" required="true"> to 
+      <label for="startDate">Dates Read</label><br>
+      <div class="form-row">
+        <input type="date" id="startDate" name="startDate" min="2001-01-01" max="2099-12-31" required="true"> 
+        <p><b>to</b></p>
         <input type="date" id="endDate" name="endDate" min="2001-01-01" max="2099-12-31" required="true">
       </div>
+      <label for="bookRating">Rating</label> <!-- was taskRate-->
       <div class="form-row">
-        <label for="bookRating">Rating</label> <!-- was taskRate-->
         <input  type="range" min="1" max="5" step="1" name="bookRating" id="bookRating" required="true"/>
         <p id="ratingValue">3</p>
       </div>
+      <label for="bookReview">Mini Review</label> 
       <div class="form-row">
-        <label for="bookReview">Mini Review</label> 
         <input type="text" name="bookReview" id="bookReview" required="true"/>
       </div>
       <div class="form-row">
@@ -65,16 +64,21 @@
       <div class="form-row">
         <input type="submit" class="btn">
       </div>
+      <div class="form-row" id="bookPopUp">
+        <button type="button" class="cancel" onclick="closeForm()"> Cancel </button>
+      </div>
     </form>
   </div>
 
-  <h2>Tasks</h2>
-  <ul id="bookList"> <!--task list-->
-  </ul>
+<!--
+      <div class="book-popup" id="bookPopUp" style="display: none;"> 
+        <button type="button" class="close" onclick="closePopUp()"> &#60; </button> -->
 
-  <div class="book-popup" id="bookPopUp" style="display: none;"> 
-    <button type="button" class="close" onclick="closePopUp()"> &#60; </button> 
-  </div>
+  <section>
+    <h2>Library of Read Books</h2>
+    <ul id="bookList"></ul>
+  </section>
+
 
   <footer>
     <p><i>Made by: Sydney Haddad</i></p>
