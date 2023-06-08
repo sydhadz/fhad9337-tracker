@@ -67,9 +67,17 @@ header {
 footer {
     padding: 10px;
     background-color: rgb(22, 22, 22);
-    font-size: 20px;
     color: #fff;
-    align-items: center;
+
+    h2 {
+        font-size: 20px;
+        align-items: center;
+    }
+
+    img {
+        padding-right: 20px;
+        width: 50px;
+    }
 }
 
 

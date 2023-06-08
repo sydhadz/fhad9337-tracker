@@ -37,9 +37,6 @@
             <option value="Horror">Horror</option>
             <option value="Mystery">Mystery</option>
             <option value="Romance">Romance</option>
-            <option value="Self-Help">Self-Help</option>
-            <option value="Thriller">Thriller</option>
-            <option value="Western">Western</option>
         </select>
       </div>
       <label for="startDate">Dates Read</label><br>
@@ -64,24 +61,25 @@
       <div class="form-row">
         <input type="submit" class="btn">
       </div>
-      <div class="form-row" id="bookPopUp">
+      <div class="form-row">
         <button type="button" class="cancel" onclick="closeForm()"> Cancel </button>
       </div>
     </form>
   </div>
-
-<!--
-      <div class="book-popup" id="bookPopUp" style="display: none;"> 
-        <button type="button" class="close" onclick="closePopUp()"> &#60; </button> -->
 
   <section>
     <h2>Library of Read Books</h2>
     <ul id="bookList"></ul>
   </section>
 
+  <div id="bookPopUp">
+    <button type="button" class="back" onclick="closeForm()" style="display: none;"> Back </button>
+  </div>
+
 
   <footer>
-    <p><i>Made by: Sydney Haddad</i></p>
+    <p><img src="logo.png"><i>Made by: Sydney Haddad</i></p>
+
   </footer>
 
   <script src="script.js"></script>
